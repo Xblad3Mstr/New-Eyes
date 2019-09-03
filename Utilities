@@ -1,1 +1,77 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
+public class Player : MonoBehaviour
+{
+
+    float speed = 10f;
+    private Rigidbody rig;
+    GameObject blythe;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        int health = 100;
+        rig = GetComponent<Rigidbody>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //saw in tutorial
+        float hAxis = Input.GetAxis("Horizontal");
+        float vAxis = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(hAxis, 0, vAxis) * speed * Time.deltaTime;
+
+        //came up with by myself
+        if(Input.GetKey(KeyCode.W))
+        {
+
+            Transform.Translate(speed * Time.deltaTime, 0, 0);
+
+
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+
+
+
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+
+
+
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+
+
+
+        }
+
+    }
+
+    public levelUp()
+    {
+
+
+
+
+    }
+
+    public lowHealth()
+    {
+     if(health <= 25 / 100)
+        {
+
+            print("Health is low");
+
+        }
+            
+
+    }
+
+}
