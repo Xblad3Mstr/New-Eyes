@@ -8,11 +8,12 @@ public class Utilities: MonoBehaviour
     float speed = 10f;
     private Rigidbody rig;
     GameObject blythe;
-
+    int health = 100;
+    
     // Start is called before the first frame update
     void Start()
     {
-        int health = 100;
+        
         rig = GetComponent<Rigidbody>();
 
     }
