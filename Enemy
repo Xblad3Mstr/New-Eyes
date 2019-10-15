@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    public Enemy instance;
+    public float maxHealth = 120f;
+    public float health = 120f;
+    public int amountOfGold;
+
+    public bool freeze;
+    public float frozenTime = 7f;
+
+    public bool burn;
+    public float burningTime = 10f;
+
+    public bool poisoned;
+    public float poisonedTime = 6f;
+
+   public void Burning()
+    {
+        if (!burn)
+        {
+            burn = true;
+            health -= 7f;
+        }
+        else
+        {
+            burn = false;
+        }
+    }
+
+    public void LetItGo()
+    {
+        if (!freeze)
+        {
+            freeze = true;
+            
+        }
+        else
+        {
+            freeze = false;
+        }
+    }
+
+    public void Venom()
+    {
+        if (!poisoned)
+        {
+            poisoned = true;
+            health -= 5f;
+        }
+        else
+        {
+            poisoned = false;
+        }
+    }
+
+    public void EnemyDeath()
+    {
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+}
