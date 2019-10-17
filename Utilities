@@ -8,8 +8,17 @@ public class Utilities: MonoBehaviour
     float speed = 10f;
     private Rigidbody rig;
     GameObject blythe;
-    int health = 100;
+    float health = 100f;
     float moveSpeed = 10f;
+
+    public bool freeze;
+    public float frozenTime = 7f;
+
+    public bool burn;
+    public float burningTime = 10f;
+
+    public bool poisoned;
+    public float poisonedTime = 6f;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +45,44 @@ public class Utilities: MonoBehaviour
 
     }
 
+    public void Burning()
+    {
+        if (!burn)
+        {
+            burn = true;
+            health -= 7f;
+        }
+        else
+        {
+            burn = false;
+        }
+    }
+
+    public void LetItGo()
+    {
+        if (!freeze)
+        {
+            freeze = true;
+
+        }
+        else
+        {
+            freeze = false;
+        }
+    }
+
+    public void Venom()
+    {
+        if (!poisoned)
+        {
+            poisoned = true;
+            health -= 5f;
+        }
+        else
+        {
+            poisoned = false;
+        }
+    }
 
     public void LevelUp()
     {
