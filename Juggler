@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Juggler : Enemy
+{
+    int amountOfGold = 30;
+    int experience = 60;
+    int attackPower;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void AttackOne()
+    {
+        attackPower = 6;
+        Venom();
+    }
+
+    public void AttackTwo()
+    {
+        attackPower = 8;
+    }
+}
