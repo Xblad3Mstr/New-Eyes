@@ -9,7 +9,7 @@ public class Utilities: MonoBehaviour
     private Rigidbody rig;
     GameObject blythe;
     int health = 100;
-    
+    float moveSpeed = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,53 +26,48 @@ public class Utilities: MonoBehaviour
         float vAxis = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(hAxis, 0, vAxis) * speed * Time.deltaTime;
 
-        //came up with by myself
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-
-            Transform.Translate(speed * Time.deltaTime, 0, 0);
-
-
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-
-
-
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-
-
-
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-
-
-
+            float moveForward = Input.GetAxis("Vertical");
+            float moveSideways = Input.GetAxis("Horizontal");
+            transform.position = transform.position + Camera.main.transform.forward * (moveSpeed * moveForward) * Time.deltaTime;
+            transform.position = transform.position + Camera.main.transform.right * (moveSpeed * moveSideways) * Time.deltaTime;
         }
 
     }
 
-    public levelUp()
-    {
 
+    public void LevelUp()
+    {
 
 
 
     }
 
-    public lowHealth()
+    public void LowHealth()
     {
-     if(health <= 25 / 100)
+        if (health <= 25 / 100)
         {
 
             print("Health is low");
+           
 
         }
-            
 
+
+    }
+
+    public void GameOver()
+    {
+        if(health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
 }
