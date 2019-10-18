@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Utilities: MonoBehaviour
 {
-
+    public Experience expInstance;
     float speed = 10f;
     private Rigidbody rig;
     GameObject blythe;
@@ -82,13 +82,6 @@ public class Utilities: MonoBehaviour
         {
             poisoned = false;
         }
-    }
-
-    public void LevelUp()
-    {
-
-
-
     }
 
     public void LowHealth()
