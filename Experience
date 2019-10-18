@@ -4,7 +4,7 @@ using UnityEngine;
  
 public class Experience : MonoBehaviour
 {
-
+    public Experience expInstance;
     //current level
     public int vLevel = 1;
     //current exp amount
